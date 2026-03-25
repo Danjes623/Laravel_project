@@ -26,5 +26,12 @@ class UsuarioController extends Controller
         return redirect()->back()->with('success', 'Usuario creado exitosamente');
     }
 
+    public function index()
+{
+    $usuarios = \App\Models\Usuario::all();
+
+    return view('usuarios', compact('usuarios'));
+}
+
 
 }
